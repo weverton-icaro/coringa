@@ -1,0 +1,9 @@
+node_modules
+.vscode
+.env
+temp
+coverage
+logs
+yarn.lock
+dist
+log_pm2
