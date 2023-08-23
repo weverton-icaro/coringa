@@ -18,7 +18,7 @@ const config = {
     TYPE: process.env.DB_TYPE || 'mysql',
     HOST: process.env.DB_HOST,
     PORT: Number(process.env.DB_PORT),
-    USERNAME: process.env.DB_USERNAME,
+    USER: process.env.DB_USER,
     PASSWORD: process.env.DB_PASSWORD,
     NAME: process.env.DB_DATABASE,
   },
