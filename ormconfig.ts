@@ -1,3 +1,4 @@
+import console from 'console';
 import { config } from './config/api';
 
 function shouldEnableLogging(env: string | undefined): boolean {
@@ -8,7 +9,11 @@ const env = config.ENV;
 const loggingEnabled = shouldEnableLogging(env);
 
 const ORMConfig = {
+<<<<<<< HEAD
   type: config.DATABASE.TYPE,
+=======
+  type: "mysql",
+>>>>>>> feature/heuder
   host: config.DATABASE.HOST,
   port: config.DATABASE.PORT,
   username: config.DATABASE.USER,
@@ -20,9 +25,18 @@ const ORMConfig = {
   migrations: ["src/shared/infra/typeorm/migrations/*.ts"],
   entities: ["src/shared/infra/typeorm/entities/*.ts"],
   cli: {
+<<<<<<< HEAD
     migrationsDir: "./src/shared/infra/typeorm/migrations",
     entitiesDir: "./src/shared/infra/typeorm/entities",
   }
 };
 
 export = ORMConfig
+=======
+    migrationsDir: "src/shared/infra/typeorm/migrations",
+    entitiesDir: "src/shared/infra/typeorm/entities",
+  },
+};
+
+export = ORMConfig
+>>>>>>> feature/heuder
