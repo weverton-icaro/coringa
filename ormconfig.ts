@@ -7,7 +7,7 @@ function shouldEnableLogging(env: string | undefined): boolean {
 const env = config.ENV;
 const loggingEnabled = shouldEnableLogging(env);
 
-export default {
+const ORMConfig = {
   type: config.DATABASE.TYPE,
   host: config.DATABASE.HOST,
   port: config.DATABASE.PORT,
@@ -20,7 +20,9 @@ export default {
   migrations: ["src/shared/infra/typeorm/migrations/*.ts"],
   entities: ["src/shared/infra/typeorm/entities/*.ts"],
   cli: {
-    migrationsDir: "./src/shared/infra/typeorm/migrations",
-    entitiesDir: "/src/shared/infra/typeorm/entities",
+    migrationsDir: "src/shared/infra/typeorm/migrations",
+    entitiesDir: "src/shared/infra/typeorm/entities",
   },
 };
+
+export = ORMConfig
