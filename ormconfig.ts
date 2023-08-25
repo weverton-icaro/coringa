@@ -1,4 +1,3 @@
-import console from 'console';
 import { config } from './config/api';
 
 function shouldEnableLogging(env: string | undefined): boolean {
@@ -21,9 +20,18 @@ const ORMConfig = {
   migrations: ["src/shared/infra/typeorm/migrations/*.ts"],
   entities: ["src/shared/infra/typeorm/entities/*.ts"],
   cli: {
+<<<<<<< HEAD
     migrationsDir: "./src/shared/infra/typeorm/migrations",
     entitiesDir: "./src/shared/infra/typeorm/entities",
   }
 };
 
 export = ORMConfig
+=======
+    migrationsDir: "src/shared/infra/typeorm/migrations",
+    entitiesDir: "src/shared/infra/typeorm/entities",
+  },
+};
+
+export = ORMConfig
+>>>>>>> feature/heuder

@@ -10,6 +10,8 @@ import { logger } from '../../utils/logger';
 import AppError from '../error/AppError';
 import { router } from '../routes';
 
+import "../../shared/container";
+
 export class App {
   public app: Application;
 
