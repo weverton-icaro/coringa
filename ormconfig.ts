@@ -1,4 +1,3 @@
-import console from 'console';
 import { config } from './config/api';
 
 function shouldEnableLogging(env: string | undefined): boolean {
