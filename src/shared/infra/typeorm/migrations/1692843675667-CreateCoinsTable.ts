@@ -15,24 +15,14 @@ export class createCoinsTable1692843675667 implements MigrationInterface {
             generationStrategy: "increment"
           },
           {
-            name: "userId",
-            type: "integer",
-            isNullable: false
-          },
-          {
             name: "type",
-            type: "varchar", // TODO: FIAT OR CRIPTO
+            type: "varchar", // TODO: FIAT OR CRIPTO  BRL, EUR e USD
             isNullable: false
           },
           {
             name: "isEnabled",
             type: "tinyint",
             default: true
-          },
-          {
-            name: "isDeleted",
-            type: "tinyint",
-            default: false
           },
           {
             name: "createdAt",
@@ -50,6 +40,10 @@ export class createCoinsTable1692843675667 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<any> {
+    const tableExist = await queryRunner.hasTable('coins');
+    if (!tableExist) {
+      await queryRunner.dropTable('coins');
+    }
   }
 
 }

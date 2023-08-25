@@ -11,6 +11,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
+import { User } from "./User";
 
 @Entity("coins")
 export default class Coins {
@@ -18,39 +19,31 @@ export default class Coins {
   id: number;
 
   @Column()
-  userId: number;
-
-  @Column()
   type: string;
 
   @Column()
-  isEnabled: number;
-
-  @Column()
-  isDeleted: number;
-
-  @Column()
-  createdAt: Date;
+  isEnabled: boolean;
 
   @CreateDateColumn()
-  created_at: Date;
+  createdAt: Date;
 
   @UpdateDateColumn()
-  updated_at: Date;
+  updatedAt: Date;
+
 
   @BeforeInsert()
   insertCreated() {
-    this.created_at = new Date(
+    this.createdAt = new Date(
       moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
     );
-    this.updated_at = new Date(
+    this.updatedAt = new Date(
       moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
     );
   }
 
   @BeforeUpdate()
   insertUpdated() {
-    this.updated_at = new Date(
+    this.updatedAt = new Date(
       moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
     );
   }
