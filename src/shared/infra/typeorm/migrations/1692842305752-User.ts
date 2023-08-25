@@ -52,10 +52,12 @@ export class user1692842305752 implements MigrationInterface {
             {
               name: "createdAt",
               type: "timestamp",
+              default: "now()"
             },
             {
               name: "updatedAt",
               type: "timestamp",
+              default: "now()"
             }
           ],
         })
