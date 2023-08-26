@@ -14,7 +14,7 @@ import {
 import { User } from "./User";
 
 @Entity("coins")
-export default class Coins {
+export class Coin {
   @PrimaryGeneratedColumn()
   id: number;
 
