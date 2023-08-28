@@ -29,10 +29,15 @@ export class CoinRepository implements ICoinRepository {
     return coin;
   }
 
-  async findByName(name: string): Promise<Coin[] | undefined> {
+  async findByType(tipe: string): Promise<Coin[] | undefined> {
     // @ts-ignore
-    const coin = await this.repository.find({ name: Like(`%${name}%`) })
+    const coin = await this.repository.find({ type: Like(`%${type}%`) })
     return coin;
+  }
+
+  async findByEnabler(enabler: boolean): Promise<Coin[] | undefined> {
+    const coin = await this.repository.find({ isEnabled: enabler })
+    return coin
   }
 
   async update(data: IUpdateCoin): Promise<Coin | undefined> {

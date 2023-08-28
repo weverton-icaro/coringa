@@ -3,7 +3,7 @@ import { container } from "tsyringe";
 import { DeleteCoinUseCase } from "../../services/delete/deleteCoin";
 
 export class DeleteCoinController {
-  async handle(request: Request, response: Response): Promise<Response> {
+  async handler(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
     try {
       const createCoinService = container.resolve(DeleteCoinUseCase)

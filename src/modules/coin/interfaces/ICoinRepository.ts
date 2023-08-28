@@ -6,7 +6,8 @@ export interface ICoinRepository {
   create(data: ICreateCoin): Promise<Coin | undefined>
   find(): Promise<Coin[] | undefined>
   findById(id: number): Promise<Coin | undefined>
-  findByName(name: string): Promise<Coin[] | undefined>
+  findByType(type: string): Promise<Coin[] | undefined>
+  findByEnabler(enabler: boolean): Promise<Coin[] | undefined>
   update(data: IUpdateCoin): Promise<Coin | undefined>
   delete(id: number): Promise<Boolean>
 }

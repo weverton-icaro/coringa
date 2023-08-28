@@ -3,8 +3,8 @@ import { logger } from "src/utils/logger";
 import { container } from "tsyringe";
 import { CreateCoinService } from "../../services/create/createCoin.service";
 
-export class createCoinController {
-  async handle(request: Request, response: Response): Promise<Response> {
+export class CreateCoinController {
+  async handler(request: Request, response: Response): Promise<Response> {
     const { type, phone } = request.body;
 
     try {
