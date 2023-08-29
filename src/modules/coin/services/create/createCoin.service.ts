@@ -1,6 +1,6 @@
 
 import AppError from 'src/http/error/AppError';
-import { Coin } from "src/shared/infra/typeorm/entities/Coin";
+import { Coin } from "../../../../shared/infra/typeorm/entities/Coin";
 import { inject, injectable } from "tsyringe";
 import { ICoinRepository } from "../../interfaces/ICoinRepository";
 import { ICreateCoin } from "../../interfaces/ICreateCoin";
