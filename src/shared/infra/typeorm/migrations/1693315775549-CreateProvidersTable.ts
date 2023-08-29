@@ -16,7 +16,7 @@ export class createProvidersTable1693315775549 implements MigrationInterface {
           },
           {
             name: "slug",
-            type: "varchar"
+            type: "longtext"
           },
           {
             name: "name",
@@ -28,7 +28,7 @@ export class createProvidersTable1693315775549 implements MigrationInterface {
           },
           {
             name: "url",
-            type: "varchar"
+            type: "longtext"
           },
           {
             name: "public_key",
