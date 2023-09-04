@@ -1,5 +1,6 @@
 import moment from 'moment-timezone';
-import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, JoinColumn, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Session } from './Session';
 
 @Entity('transactions')
 export class Transaction {
@@ -7,49 +8,32 @@ export class Transaction {
   id: number;
 
   @Column()
-  token: string;
-
-  @Column()
-  transactionUuid: string;
-
-  @Column()
-  roundClosed: boolean;
-
-  @Column()
-  supplierUser: string;
-
-  @Column()
-  round: string;
-
-  @Column()
-  gameId: number;
-
-  @Column()
-  isFree: boolean;
-
-  @Column()
-  gameCode: string;
-
-  @Column()
-  currency: string;
-
-  @Column()
   requestUuid: string;
 
   @Column()
-  campaignUuid: string;
-
-  @Column()
-  rewardUuid: string;
-
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @Column()
-  bet: string;
+  sessionId: number;
 
   @Column()
   amount: number;
+
+  @Column()
+  header: string;
+
+  @Column()
+  payload: string;
+
+  @Column()
+  response: string;
+
+  @Column()
+  responseHeader: string;
+
+  @ManyToMany(type => Session)
+  @JoinColumn({ name: "sessionId" })
+  sessions: Session;
+
+  @CreateDateColumn()
+  createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;

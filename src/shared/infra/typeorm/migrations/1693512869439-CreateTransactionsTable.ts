@@ -16,60 +16,32 @@ export class createTransactionsTable1693512869439 implements MigrationInterface 
             generationStrategy: "increment"
           },
           {
-            name: "token",
-            type: "varchar"
-          },
-          {
-            name: "transactionUuid",
-            type: "varchar"
-          },
-          {
-            name: "supplierUser",
-            type: "varchar"
-          },
-          {
-            name: "roundClosed",
-            type: "tinyint",
-          },
-          {
-            name: "round",
-            type: "varchar"
-          },
-          {
             name: "requestUuid",
             type: "varchar"
           },
           {
-            name: "isFree",
-            type: "tinyint"
-          },
-          {
-            name: "gameId",
+            name: "sessionId",
             type: "int"
-          },
-          {
-            name: "gameCode",
-            type: "varchar"
-          },
-          {
-            name: "currency",
-            type: "varchar"
-          },
-          {
-            name: "campaignUuid",
-            type: "varchar"
-          },
-          {
-            name: "rewardUuid",
-            type: "varchar"
-          },
-          {
-            name: "bet",
-            type: "varchar"
           },
           {
             name: "amount",
             type: "bigint"
+          },
+          {
+            name: "header",
+            type: "varchar"
+          },
+          {
+            name: "payload",
+            type: "varchar"
+          },
+          {
+            name: "response",
+            type: "varchar"
+          },
+          {
+            name: "responseHeader",
+            type: "varchar"
           },
           {
             name: "createdAt",
@@ -82,7 +54,18 @@ export class createTransactionsTable1693512869439 implements MigrationInterface 
             default: "now()"
           }
 
+        ],
+        foreignKeys: [
+          {
+            name: "FK_sessions_transactions",
+            columnNames: ["sessionId"],
+            referencedTableName: "sessions",
+            referencedColumnNames: ["id"],
+            onDelete: "CASCADE",
+            onUpdate: "CASCADE"
+          }
         ]
+
       })
     )
   }
