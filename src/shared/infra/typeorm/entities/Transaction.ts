@@ -1,5 +1,5 @@
 import moment from 'moment-timezone';
-import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, JoinColumn, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Session } from './Session';
 
 @Entity('transactions')
@@ -28,7 +28,7 @@ export class Transaction {
   @Column()
   responseHeader: string;
 
-  @ManyToMany(type => Session)
+  @ManyToOne(type => Session)
   @JoinColumn({ name: "sessionId" })
   sessions: Session;
 
