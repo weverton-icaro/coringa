@@ -1,5 +1,5 @@
 export interface ICoinResponse {
-  id: number;
-  type: string;
-  isEnabled: boolean;
+    id: number
+    type: string
+    isEnabled: boolean
 }
