@@ -11,7 +11,8 @@
     "revert": "ts-node ./node_modules/typeorm/cli.js migration:revert",
     "create": "ts-node ./node_modules/typeorm/cli.js migration:create -n ",
     "gerar": "ts-node ./node_modules/typeorm/cli.js migration:generate -n ",
-    "formatter":"npx prettier 'src/**/*.{js,ts,mjs,cjs,json}' --write"
+    "formatter": "npx prettier 'src/**/*.{js,ts,mjs,cjs,json}' --write",
+    "check": "npx prettier . --check"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
