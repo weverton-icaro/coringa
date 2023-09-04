@@ -8,7 +8,11 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/http/main/main.ts",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "migrate": "npx ts-node ./node_modules/typeorm/cli.js migration:run ",
-    "revert": "ts-node ./node_modules/typeorm/cli.js migration:revert"
+    "revert": "ts-node ./node_modules/typeorm/cli.js migration:revert",
+    "create": "ts-node ./node_modules/typeorm/cli.js migration:create -n ",
+    "gerar": "ts-node ./node_modules/typeorm/cli.js migration:generate -n ",
+    "formatter": "npx prettier 'src/**/*.{js,ts,mjs,cjs,json}' --write",
+    "check": "npx prettier . --check"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -39,6 +43,7 @@
     "@types/moment": "^2.13.0",
     "@types/morgan": "^1.9.4",
     "@types/node": "^20.5.1",
+    "prettier": "3.0.3",
     "ts-loader": "^9.4.4",
     "tsconfig-paths": "^4.2.0"
   }

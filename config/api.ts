@@ -4,14 +4,14 @@ const config = {
     NAME: 'API Coringa Games',
     DESCRIPTION: 'API Coringa Games',
     PORT: process.env.PORT ?? process.env.API_PORT,
-    BASEPATH: process.env.HOST ? "/api" : "/api-coringagames/v1",
+    BASEPATH: process.env.HOST ? '/api' : '/api-coringagames/v1',
     HOST: process.env.HOST ?? process.env.API_HOST,
     CERTIFIED: {
       KEY: process.env.CERTIFIED_KEY,
       CA: process.env.CERTIFIED_CA,
       FILE: process.env.CERTIFIED_FILE,
       PFX: process.env.CERTIFIED_PFX,
-      PASSPHRASE: process.env.CERTIFIED_PASSPHRASE
+      PASSPHRASE: process.env.CERTIFIED_PASSPHRASE,
     },
   },
   DATABASE: {
@@ -23,10 +23,9 @@ const config = {
     NAME: process.env.DB_DATABASE,
   },
   SHARED: {
-    CONTACT: ""
+    CONTACT: '',
   },
   ALLOW_DOMAINS: [],
-}
+};
 
 export { config };
-

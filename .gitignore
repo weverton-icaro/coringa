@@ -9,3 +9,4 @@ dist
 log_pm2
 ormlogs.log
 package-look.json
+send.ts
