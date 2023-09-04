@@ -1,7 +1,6 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class user1692842305752 implements MigrationInterface {
-
   public async up(queryRunner: QueryRunner): Promise<void> {
     const tableExist = await queryRunner.hasTable('users');
     if (!tableExist) {
@@ -10,11 +9,11 @@ export class user1692842305752 implements MigrationInterface {
           name: 'users',
           columns: [
             {
-              name: "id",
-              type: "integer",
+              name: 'id',
+              type: 'integer',
               isPrimary: true,
               isGenerated: true,
-              generationStrategy: "increment",
+              generationStrategy: 'increment',
             },
             {
               name: 'username',
@@ -42,25 +41,25 @@ export class user1692842305752 implements MigrationInterface {
             {
               name: 'pixKey',
               type: 'varchar',
-              isNullable: true
+              isNullable: true,
             },
             {
               name: 'phone',
               type: 'varchar',
-              isNullable: true
+              isNullable: true,
             },
             {
-              name: "createdAt",
-              type: "timestamp",
-              default: "now()"
+              name: 'createdAt',
+              type: 'timestamp',
+              default: 'now()',
             },
             {
-              name: "updatedAt",
-              type: "timestamp",
-              default: "now()"
-            }
+              name: 'updatedAt',
+              type: 'timestamp',
+              default: 'now()',
+            },
           ],
-        })
+        }),
       );
     }
   }
@@ -71,5 +70,4 @@ export class user1692842305752 implements MigrationInterface {
       await queryRunner.dropTable('users');
     }
   }
-
 }

@@ -16,13 +16,13 @@ const ORMConfig = {
   database: config.DATABASE.NAME,
   synchronize: false,
   logging: loggingEnabled,
-  logger: "file",
-  migrations: ["src/shared/infra/typeorm/migrations/*.ts"],
-  entities: ["src/shared/infra/typeorm/entities/*.ts"],
+  logger: 'file',
+  migrations: ['src/shared/infra/typeorm/migrations/*.ts'],
+  entities: ['src/shared/infra/typeorm/entities/*.ts'],
   cli: {
-    migrationsDir: "./src/shared/infra/typeorm/migrations",
-    entitiesDir: "./src/shared/infra/typeorm/entities",
-  }
+    migrationsDir: './src/shared/infra/typeorm/migrations',
+    entitiesDir: './src/shared/infra/typeorm/entities',
+  },
 };
 
-export = ORMConfig
+export = ORMConfig;

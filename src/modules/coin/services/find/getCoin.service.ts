@@ -1,16 +1,19 @@
-import { Coin } from "src/shared/infra/typeorm/entities/Coin";
-import { inject, injectable } from "tsyringe";
-import { ICoinRepository } from "../../interfaces/ICoinRepository";
-
+import { Coin } from 'src/shared/infra/typeorm/entities/Coin';
+import { inject, injectable } from 'tsyringe';
+import { ICoinRepository } from '../../interfaces/ICoinRepository';
 
 @injectable()
 export class GetCoinUseCase {
   constructor(
     @inject('CoinRepository')
-    private coinRepository: ICoinRepository
-  ) { }
+    private coinRepository: ICoinRepository,
+  ) {}
 
-  async execute(id?: string, type?: string, isEnable?: boolean): Promise<Coin[] | undefined> {
+  async execute(
+    id?: string,
+    type?: string,
+    isEnable?: boolean,
+  ): Promise<Coin[] | undefined> {
     let coins: Coin[] = [];
 
     if (id) {

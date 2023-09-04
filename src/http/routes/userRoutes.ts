@@ -1,10 +1,10 @@
-import { Router } from "express";
-import { CreateUserController } from "src/modules/users/controllers/create/createUser.controller";
-import { DeleteUserController } from "src/modules/users/controllers/delete/deleteUser.controller";
-import { FindUserController } from "src/modules/users/controllers/finds/findUser.controller";
-import { UpdateUserController } from "src/modules/users/controllers/update/updateUser.controller";
-import { ensureAdmin } from "../middlewares/ensureAdmin";
-import { ensureAuth } from "../middlewares/ensureAuth";
+import { Router } from 'express';
+import { CreateUserController } from 'src/modules/users/controllers/create/createUser.controller';
+import { DeleteUserController } from 'src/modules/users/controllers/delete/deleteUser.controller';
+import { FindUserController } from 'src/modules/users/controllers/finds/findUser.controller';
+import { UpdateUserController } from 'src/modules/users/controllers/update/updateUser.controller';
+import { ensureAdmin } from '../middlewares/ensureAdmin';
+import { ensureAuth } from '../middlewares/ensureAuth';
 
 const userRouter = Router();
 const createUserController = new CreateUserController();

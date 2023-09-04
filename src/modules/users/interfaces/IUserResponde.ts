@@ -4,5 +4,5 @@ export interface IUserResponse {
   email: string;
   phone: string;
   pixKey: string;
-  active: boolean
+  active: boolean;
 }

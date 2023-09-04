@@ -1,42 +1,41 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class createCoinsTable1692843675667 implements MigrationInterface {
-
   public async up(queryRunner: QueryRunner): Promise<any> {
     await queryRunner.createTable(
       new Table({
-        name: "coins",
+        name: 'coins',
         columns: [
           {
-            name: "id",
-            type: "int",
+            name: 'id',
+            type: 'int',
             isPrimary: true,
             isGenerated: true,
-            generationStrategy: "increment"
+            generationStrategy: 'increment',
           },
           {
-            name: "type",
-            type: "varchar", // TODO: FIAT OR CRIPTO  BRL, EUR e USD
-            isNullable: false
+            name: 'type',
+            type: 'varchar', // TODO: FIAT OR CRIPTO  BRL, EUR e USD
+            isNullable: false,
           },
           {
-            name: "isEnabled",
-            type: "tinyint",
-            default: true
+            name: 'isEnabled',
+            type: 'tinyint',
+            default: true,
           },
           {
-            name: "createdAt",
-            type: "timestamp",
-            default: "now()"
+            name: 'createdAt',
+            type: 'timestamp',
+            default: 'now()',
           },
           {
-            name: "updatedAt",
-            type: "timestamp",
-            default: "now()"
-          }
-        ]
-      })
-    )
+            name: 'updatedAt',
+            type: 'timestamp',
+            default: 'now()',
+          },
+        ],
+      }),
+    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<any> {
@@ -45,5 +44,4 @@ export class createCoinsTable1692843675667 implements MigrationInterface {
       await queryRunner.dropTable('coins');
     }
   }
-
 }

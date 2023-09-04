@@ -1,4 +1,4 @@
-import moment from "moment-timezone";
+import moment from 'moment-timezone';
 
 import {
   BeforeInsert,
@@ -8,9 +8,9 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from "typeorm";
+} from 'typeorm';
 
-@Entity("coins")
+@Entity('coins')
 export class Coin {
   @PrimaryGeneratedColumn()
   id: number;
@@ -27,24 +27,22 @@ export class Coin {
   @UpdateDateColumn()
   updatedAt: Date;
 
-
   @BeforeInsert()
   insertCreated() {
     this.createdAt = new Date(
-      moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
+      moment().tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss'),
     );
     this.updatedAt = new Date(
-      moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
+      moment().tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss'),
     );
   }
 
   @BeforeUpdate()
   insertUpdated() {
     this.updatedAt = new Date(
-      moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
+      moment().tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss'),
     );
   }
-
 }
 
 // Coin

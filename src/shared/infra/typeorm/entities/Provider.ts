@@ -1,4 +1,4 @@
-import moment from "moment-timezone";
+import moment from 'moment-timezone';
 
 import {
   BeforeInsert,
@@ -8,15 +8,14 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from "typeorm";
+} from 'typeorm';
 
-
-@Entity("providers")
+@Entity('providers')
 export class Provider {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column("longtext")
+  @Column('longtext')
   slug: string;
 
   @Column()
@@ -25,7 +24,7 @@ export class Provider {
   @Column()
   module: string;
 
-  @Column("longtext")
+  @Column('longtext')
   url: string;
 
   @Column()
@@ -40,23 +39,20 @@ export class Provider {
   @UpdateDateColumn()
   updatedAt: Date;
 
-
   @BeforeInsert()
   insertCreated() {
     this.createdAt = new Date(
-      moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
+      moment().tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss'),
     );
     this.updatedAt = new Date(
-      moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
+      moment().tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss'),
     );
   }
 
   @BeforeUpdate()
   insertUpdated() {
     this.updatedAt = new Date(
-      moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
+      moment().tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss'),
     );
   }
-
 }
-

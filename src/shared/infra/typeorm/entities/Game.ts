@@ -1,4 +1,4 @@
-import moment from "moment-timezone";
+import moment from 'moment-timezone';
 
 import {
   BeforeInsert,
@@ -9,9 +9,9 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
   ManyToOne,
-  JoinColumn
-} from "typeorm";
-import { Provider } from "./Provider";
+  JoinColumn,
+} from 'typeorm';
+import { Provider } from './Provider';
 
 @Entity('games')
 export class Game {
@@ -55,17 +55,17 @@ export class Game {
   @BeforeInsert()
   insertCreated() {
     this.createdAt = new Date(
-      moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
+      moment().tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss'),
     );
     this.updatedAt = new Date(
-      moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
+      moment().tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss'),
     );
   }
 
   @BeforeUpdate()
   insertUpdated() {
     this.updatedAt = new Date(
-      moment().tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")
+      moment().tz('America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss'),
     );
   }
 }

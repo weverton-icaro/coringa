@@ -1,7 +1,6 @@
-import { instanceToInstance } from "class-transformer";
-import { User } from "src/shared/infra/typeorm/entities/User";
-import { IUserResponse } from "../interfaces/IUserResponde";
-
+import { instanceToInstance } from 'class-transformer';
+import { User } from 'src/shared/infra/typeorm/entities/User';
+import { IUserResponse } from '../interfaces/IUserResponde';
 
 export class UserMap {
   static toDTO({
@@ -10,7 +9,7 @@ export class UserMap {
     name,
     phone,
     pixKey,
-    active
+    active,
   }: User): IUserResponse {
     const user = instanceToInstance({
       email,
@@ -18,7 +17,7 @@ export class UserMap {
       name,
       phone,
       pixKey,
-      active
+      active,
     });
 
     delete (user as any).password;
