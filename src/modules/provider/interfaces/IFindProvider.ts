@@ -3,6 +3,5 @@ export interface IFindProvider {
   slug?: string
   name?: string
   module?: string
-  url?: string
-  publicKey?: string
+  able?: boolean
 }
